@@ -1,6 +1,6 @@
 # One Month Rails
 
-This is the pinteresting sample application for
-[*One Month Rails*](http://onemonthrails.com)
+This is my awesome new app, wish me luck!
+[*One Month Rails*](http://onemonthrills.com)
 
-by [Me](http://onemonthrails.com)
+by [Me](http://onemonthrills.com)
