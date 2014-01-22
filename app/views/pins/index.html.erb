@@ -3,14 +3,16 @@
     <!-- @pins exists because defined in controller; goes through every single pin in @pins variable and runs below --> 
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
-        <%= image_tag pin.image.url(:medium) %>
+        <!-- think of image_tag as img src="" and you need to enclose pin.image in parentheses because other wise link_to (a href="") would think that image_tag and pin.image are two seperate things) -->
+        <%= link_to image_tag(pin.image.url(:medium)), pin %>
         <div class="panel-body">
-          <%= pin.description %>
-          <%= pin.user.email if pin.user %>
-          <%= link_to 'Show', pin %>
+          <p><%= pin.description %></p>
+          <p><strong><%= pin.user.email if pin.user %></strong></p>
           <% if pin.user == current_user %>
-            <%= link_to 'Edit', edit_pin_path(pin) %>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_pin_path(pin) %>
+              <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
           <% end %>
         </div>
       </div>
