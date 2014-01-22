@@ -1,3 +1,6 @@
+<!-- by putting the exclamation points before user_signed_in it does the opposite; have opted to use unless command instead -->
+<%= render 'pages/home' unless user_signed_in? %>
+
 <div class="container">
   <div id="pins" class="transitions-enabled">  
     <!-- @pins exists because defined in controller; goes through every single pin in @pins variable and runs below --> 
